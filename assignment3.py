@@ -8,6 +8,16 @@ url = f'http://www.mapquestapi.com/geocoding/v1/address?key={MAPQUEST_API_KEY}&l
 f = urllib.request.urlopen(url)
 response_text = f.read().decode('utf-8')
 response_data = json.loads(response_text)
-pprint(response_data)
+# pprint(response_data)
 
+def latlng():
+    d = dict()
+    d = response_data
+    results = d['results']
+    d = results
+    locations = d['locations']
+    d = locations
+    jingwei = d['LatLng']
+    return jingwei
 
+print(latlng())
