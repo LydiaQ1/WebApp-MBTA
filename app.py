@@ -14,11 +14,10 @@ def hello():
 @app.route('/place_name/', methods=["GET", "POST"])
 def place_name():
     if request.method == "POST":
-        place_name = request.form["city"]
-        temperature = get_temp(city_name)
-        return render_template("weather-result.html", city=city_name, temp=temperature)
+        place_name = request.form["placename"]
+        return render_template("index.html", place_name)
 
-    return render_template("weather-form.html")
+    return render_template("index.html")
 
 # @app.route('/login', methods=['GET', 'POST'])
 # def login():
