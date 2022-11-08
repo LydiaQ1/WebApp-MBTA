@@ -15,14 +15,15 @@ def latlng():
     d = response_data
     lat = d['results'][0]['locations'][0]['latLng']['lat']
     lng = d['results'][0]['locations'][0]['latLng']['lng']
-    # results = d['results']
-    # d = results
-    # locations = d['locations']
-    # d = locations
-    # jingwei = d['LatLng']
     return (lat,lng)
-    # return jingwei
 
-print(latlng())
+# print(latlng())
+
+def geturl(place=None):
+    if place:
+        place = place.replace(" ","%20")
+        return f'http://www.mapquestapi.com/geocoding/v1/address?key={MAPQUEST_API_KEY}&location={place}'
+
+# print(geturl('Wellesley College'))
 
 
