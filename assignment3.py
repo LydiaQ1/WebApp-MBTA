@@ -13,11 +13,16 @@ response_data = json.loads(response_text)
 def latlng():
     d = dict()
     d = response_data
-    results = d['results']
-    d = results
-    locations = d['locations']
-    d = locations
-    jingwei = d['LatLng']
-    return jingwei
+    lat = d['results'][0]['locations'][0]['latLng']['lat']
+    lng = d['results'][0]['locations'][0]['latLng']['lng']
+    # results = d['results']
+    # d = results
+    # locations = d['locations']
+    # d = locations
+    # jingwei = d['LatLng']
+    return (lat,lng)
+    # return jingwei
 
 print(latlng())
+
+
