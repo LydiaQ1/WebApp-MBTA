@@ -4,6 +4,8 @@
 Yucheng Zhang (Tina), Ziqi Zhou
 ## Project URL: 
 https://github.com/LydiaQ1/WebApp-MBTA.git
+## Link to Reflection:
+https://github.com/LydiaQ1/WebApp-MBTA/blob/main/README.md#project-reflection
 
 ## Project Overview
 This project is about building a website that generates the nearest MBTA stop and whether that stop is wheelchair accessible when the user input a location. First, with the API keys we got from Mapquest, we constructed functions that would return the latitude and longitude of a given place utilizing the JSON-formatted data from Mapquest. Then in the following functions, using the API keys from MBTA, we got the nearest MBTA stop of a given place and the information about whether that stop is wheelchair accessible. Then we constructed codes that could present the functions above in a WebApp. In addition, we developed the layout and aesthetics of the website in the html files.
