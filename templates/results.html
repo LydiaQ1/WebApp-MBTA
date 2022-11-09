@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nearest MBTA station</title>
+    <style>
+        body {
+            background-color: #fff0f6;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            font-size: 3em;
+            color: #000000;
+            margin-top: 200px;
+        }
+
+        p {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            font-size: 30px;
+            color: #000000;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Result</h1>
+    {% if wheelchair == 'Yes' %}
+    <p class="pink">The nearest MBTA stop is {{place}} and it is wheelchair accessible. </p>
+    {% elif wheelchair == 'No' %}
+    <p class="pink">The nearest MBTA stop is {{place}} and it is not wheelchair accessible. </p>
+    {% else %}
+    <p class="pink">The nearest MBTA stop is {{place}} and there is no information about wheelchair accessibility. </p>
+    {% endif %}
+</body>
+
+</html>

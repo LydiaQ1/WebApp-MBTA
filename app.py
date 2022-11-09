@@ -11,21 +11,14 @@ app = Flask(__name__)
 def hello():
     return render_template("index.html")
 
-@app.route('/place_name/', methods=["GET", "POST"])
+@app.route('/', methods=["GET", "POST"])
 def place_name():
     if request.method == "POST":
-        place_name = request.form["placename"]
-        return render_template("index.html", place_name)
-
-    return render_template("index.html")
-
-# @app.route('/login', methods=['GET', 'POST'])
-# def login():
-#     if request.method == 'POST':
-#         return do_the_login()
-#     else:
-#         return show_the_login_form()
-
+        place = request.form["place"]
+        stop, wheelchair = find_stop_near(place)
+        return render_template("results.html", place = stop,wheelchair=wheelchair) 
+    else:      
+        return render_template("index.html")
 
 if __name__ == '__main__':
     app.run(debug=True)

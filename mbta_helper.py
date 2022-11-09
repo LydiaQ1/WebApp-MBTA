@@ -36,7 +36,9 @@ def get_lat_long(place_name):
     """
     d = dict()
     place_name = place_name.replace(" ","%20")
+    place_name =place_name + ',Boston,MA'
     url = MAPQUEST_BASE_URL + f'?key={MAPQUEST_API_KEY}&location={place_name}'
+    # print(url)
     d = get_json(url)
     lat = d['results'][0]['locations'][0]['latLng']['lat']
     lng = d['results'][0]['locations'][0]['latLng']['lng']
@@ -52,7 +54,6 @@ def get_nearest_station(latitude, longitude):
     formatting requirements for the 'GET /stops' API.
     """
     url = MBTA_BASE_URL + f'?api_key={MBTA_API_KEY}&sort=distance&filter%5Blatitude%5D={latitude}&filter%5Blongitude%5D={longitude}'
-    d = dict()
     d = get_json(url)
     stop = d['data'][0]['attributes']['name']
     wheelchair = d['data'][0]['attributes']['wheelchair_boarding']
@@ -80,7 +81,8 @@ def main():
     """
     You can test all the functions here
     """
-    place_name = 'TD Garden'
+    place_name = 'Boston Common'
+    # print(get_lat_long(place_name))
     print(find_stop_near(place_name))
 
 
